@@ -10,7 +10,7 @@
       Field names MUST match exactly what the React forms submit.
       This page is never shown to users.
     -->
-    <form name="consultation-booking" data-netlify="true" netlify-honeypot="bot-field" hidden>
+    <form name="consultation-booking" method="POST" action="/__forms.html" data-netlify="true" netlify-honeypot="bot-field" hidden>
       <input type="hidden" name="form-name" value="consultation-booking" />
       <input type="text" name="bot-field" />
       <input type="text" name="fullName" />
@@ -25,7 +25,7 @@
       <textarea name="notes"></textarea>
     </form>
 
-    <form name="project-inquiry" data-netlify="true" netlify-honeypot="bot-field" hidden>
+    <form name="project-inquiry" method="POST" action="/__forms.html" data-netlify="true" netlify-honeypot="bot-field" hidden>
       <input type="hidden" name="form-name" value="project-inquiry" />
       <input type="text" name="bot-field" />
       <input type="text" name="fullName" />
