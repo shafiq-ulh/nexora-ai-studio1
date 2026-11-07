@@ -4,12 +4,14 @@ import { ArrowUpRight } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 import { Section, Container } from '@/components/ui/Layout';
 import { liveProjects, comingSoonProjects, type Project } from '@/config/projects';
+import { createPageMetadata } from '@/config/metadata';
 
-export const metadata = {
+export const metadata = createPageMetadata({
   title: 'Projects | Nexora AI Studio',
   description:
     'Real websites and AI solutions built by Nexora AI Studio for businesses, plus projects coming soon.',
-};
+  path: '/projects',
+});
 
 function ProjectCard({ project }: { project: Project }) {
   const isLive = project.status === 'live';

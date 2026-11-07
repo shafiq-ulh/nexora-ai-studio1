@@ -6,12 +6,14 @@ import { Button } from '@/components/ui/Button';
 import { Section, Container } from '@/components/ui/Layout';
 import { services } from '@/config/services';
 import { images } from '@/config/assets';
+import { createPageMetadata } from '@/config/metadata';
 
-export const metadata = {
+export const metadata = createPageMetadata({
   title: 'Services | Nexora AI Studio',
   description:
     'Web development, AI chatbots, workflow automation, custom AI tools and consulting for modern businesses.',
-};
+  path: '/services',
+});
 
 export default function ServicesPage() {
   return (

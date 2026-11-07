@@ -23,6 +23,12 @@ export async function generateMetadata({
   return {
     title: `${service.title} | Nexora AI Studio`,
     description: service.description,
+    alternates: { canonical: `/services/${service.slug}` },
+    openGraph: {
+      title: `${service.title} | Nexora AI Studio`,
+      description: service.description,
+      url: `/services/${service.slug}`,
+    },
   };
 }
 

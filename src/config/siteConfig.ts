@@ -15,7 +15,9 @@ export const siteConfig = {
   videoPosterURL: '/images/hero-bg2.jpg',
   profileIntroductionVideo: '/videos/intro.mp4',
   timezone: 'UTC',
-  websiteURL: 'https://nexora-ai-studio1.netlify.app',
+  websiteURL:
+    process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, '') ||
+    'https://nexora-ai-studio1.netlify.app',
   colors: {
     primaryBg: '#080B10',
     secondaryBg: '#10151D',
