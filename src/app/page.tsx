@@ -10,6 +10,7 @@ import { ArrowRight, ArrowUpRight, CheckCircle2, Sparkles } from 'lucide-react';
 import { services } from '@/config/services';
 import { images } from '@/config/assets';
 import { siteConfig } from '@/config/siteConfig';
+import { Testimonials } from '@/components/Testimonials';
 
 const stats = [
   { value: '06', label: 'Service Areas' },
@@ -335,6 +336,8 @@ export default function HomePage() {
           </div>
         </Container>
       </div>
+
+      <Testimonials compact />
 
       {/* FINAL CTA */}
       <section className="relative overflow-hidden">

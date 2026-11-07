@@ -1,5 +1,6 @@
 import type { MetadataRoute } from 'next';
 import { services } from '@/config/services';
+import { projectsWithCaseStudy } from '@/config/projects';
 import { siteConfig } from '@/config/siteConfig';
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -26,5 +27,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  return [...staticRoutes, ...serviceRoutes];
+  const projectRoutes: MetadataRoute.Sitemap = projectsWithCaseStudy.map((project) => ({
+    url: `${base}/projects/${project.slug}`,
+    lastModified,
+    changeFrequency: 'monthly',
+    priority: 0.7,
+  }));
+
+  return [...staticRoutes, ...serviceRoutes, ...projectRoutes];
 }

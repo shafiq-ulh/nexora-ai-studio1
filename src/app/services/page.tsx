@@ -7,6 +7,8 @@ import { Section, Container } from '@/components/ui/Layout';
 import { services } from '@/config/services';
 import { images } from '@/config/assets';
 import { createPageMetadata } from '@/config/metadata';
+import { Pricing } from '@/components/Pricing';
+import { FAQ } from '@/components/FAQ';
 
 export const metadata = createPageMetadata({
   title: 'Services | Nexora AI Studio',
@@ -77,6 +79,10 @@ export default function ServicesPage() {
           </div>
         </Container>
       </Section>
+
+      <Pricing />
+
+      <FAQ />
     </div>
   );
 }

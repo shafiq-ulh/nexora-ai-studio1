@@ -1,10 +1,12 @@
 import React from 'react';
+import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowUpRight } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 import { Section, Container } from '@/components/ui/Layout';
 import { liveProjects, comingSoonProjects, type Project } from '@/config/projects';
 import { createPageMetadata } from '@/config/metadata';
+import { Testimonials } from '@/components/Testimonials';
 
 export const metadata = createPageMetadata({
   title: 'Projects | Nexora AI Studio',
@@ -46,14 +48,24 @@ function ProjectCard({ project }: { project: Project }) {
         <h2 className="text-xl font-medium mb-3">{project.title}</h2>
         <p className="text-[#A2A9B3] text-sm leading-relaxed mb-6">{project.description}</p>
         {isLive && project.href ? (
-          <a
-            href={project.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-gold text-xs uppercase tracking-widest hover:underline"
-          >
-            View Live Site <ArrowUpRight size={14} />
-          </a>
+          <div className="flex flex-wrap items-center gap-5">
+            <a
+              href={project.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-gold text-xs uppercase tracking-widest hover:underline"
+            >
+              View Live Site <ArrowUpRight size={14} />
+            </a>
+            {project.caseStudy ? (
+              <Link
+                href={`/projects/${project.slug}`}
+                className="inline-flex items-center gap-2 text-[#A2A9B3] hover:text-gold text-xs uppercase tracking-widest transition-colors"
+              >
+                Read Case Study
+              </Link>
+            ) : null}
+          </div>
         ) : (
           <span className="text-[#A2A9B3] text-xs uppercase tracking-widest">
             Case study coming soon
@@ -110,6 +122,8 @@ export default function ProjectsPage() {
           </div>
         </Container>
       </Section>
+
+      <Testimonials />
     </div>
   );
 }
